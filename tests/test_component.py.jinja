@@ -3,12 +3,12 @@ from __future__ import annotations
 import pytest
 
 from asphalt.core import Context
-from asphalt.example import ExampleComponent
+from asphalt.{{ project_name }} import {{ component_name }}
 
 pytestmark = pytest.mark.anyio
 
 
 async def test_component() -> None:
-    component = ExampleComponent()
+    component = {{ component_name }}()
     async with Context() as ctx:
         await component.start(ctx)

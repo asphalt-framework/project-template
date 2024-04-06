@@ -1,0 +1,30 @@
+author_name:
+    type: str
+    default: Alex Grönholm
+    help: Author's (your) full name
+
+author_email:
+    type: str
+    default: alex.gronholm@nextday.fi
+    help: Author's (your) email address
+
+project_name:
+    type: str
+    placeholder: example
+    help: What is your subproject name (without the "asphalt-" prefix)?
+
+short_description:
+    type: str
+    placeholder: Foobar component for the Asphalt framework
+    help: What would be the short description of your project (for the PyPI)?
+
+component_name:
+    type: str
+    placeholder: ExampleComponent
+    help: What is the name of the main component?
+
+_tasks:
+    - git init
+    - git add --all
+    - git commit -m "Initial commit"
+    - "git remote add origin git@github.com/asphalt-framework/asphalt-{{ project_name }}"

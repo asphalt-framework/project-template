@@ -6,10 +6,10 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "asphalt-example"
-description = "Example component project for the Asphalt framework"
+name = "asphalt-{{ project_name }}"
+description = "{{ short_description }}"
 readme = "README.rst"
-authors = [{name = "Alex Grönholm", email = "alex.gronholm@nextday.fi"}]
+authors = [{name = "{{ author_name }}", email = "{{ author_email }}"}]
 license = {text = "Apache License 2.0"}
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -30,7 +30,7 @@ dependencies = [
 dynamic = ["version"]
 
 [project.urls]
-Homepage = "https://github.com/asphalt-framework/asphalt-example"
+Homepage = "https://github.com/asphalt-framework/asphalt-{{ project_name }}"
 
 [project.optional-dependencies]
 test = [
@@ -45,7 +45,7 @@ doc = [
 ]
 
 [project.entry-points."asphalt.components"]
-example = "asphalt.example:ExampleComponent"
+example = "asphalt.{{ project_name }}:{{ component_name }}"
 
 [tool.setuptools_scm]
 version_scheme = "post-release"
@@ -64,7 +64,7 @@ extend-select = [
 ]
 
 [tool.ruff.lint.isort]
-known-first-party = ["asphalt.example"]
+known-first-party = ["asphalt.{{ project_name }}"]
 
 [tool.mypy]
 python_version = "3.8"
@@ -76,7 +76,7 @@ mypy_path = ["src", "tests", "examples"]
 addopts = "-rsx --tb=short"
 
 [tool.coverage.run]
-source = ["asphalt.example"]
+source = ["asphalt.{{ project_name }}"]
 relative_files = true
 branch = true
 

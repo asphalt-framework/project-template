@@ -12,12 +12,12 @@ extensions = [
 templates_path = ["_templates"]
 source_suffix = ".rst"
 master_doc = "index"
-project = "asphalt-example"
-author = "Alex Grönholm"
-copyright = "20XX, " + author
+project = "asphalt-{{ project_name }}"
+author = "{{ author_name }}"
+copyright = "{{ '%Y' | strftime }}, " + author
 
 v = parse(importlib.metadata.version(project))
-version = v.base_version
+version = v.base_versionq
 release = v.public
 
 language = "en"
