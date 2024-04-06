@@ -10,5 +10,5 @@ pytestmark = pytest.mark.anyio
 
 async def test_component() -> None:
     component = {{ component_name }}()
-    async with Context() as ctx:
-        await component.start(ctx)
+    async with Context():
+        await component.start()
