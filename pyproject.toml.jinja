@@ -45,7 +45,7 @@ doc = [
 ]
 
 [project.entry-points."asphalt.components"]
-example = "asphalt.{{ project_name }}:{{ component_name }}"
+{{ project_name }} = "asphalt.{{ project_name }}:{{ component_name }}"
 
 [tool.setuptools_scm]
 version_scheme = "post-release"
