@@ -57,17 +57,18 @@ local_scheme = "dirty-tag"
 [tool.ruff.lint]
 extend-select = [
     "ASYNC",        # flake8-async
-    "W",            # pycodestyle warnings
     "G",            # flake8-logging-format
     "I",            # isort
     "ISC",          # flake8-implicit-str-concat
     "PGH",          # pygrep-hooks
-    "RUF100",       # unused noqa (yesqa)
+    "RUF",          # Ruff-specific rules
     "UP",           # pyupgrade
+    "W",            # pycodestyle warnings
 ]
 
 [tool.ruff.lint.isort]
 known-first-party = ["asphalt.{{ project_name }}"]
+known-third-party = ["asphalt.core"]
 
 [tool.mypy]
 python_version = "3.9"
@@ -76,7 +77,7 @@ explicit_package_bases = true
 mypy_path = ["src", "tests", "examples"]
 
 [tool.pytest.ini_options]
-addopts = "-rsx --tb=short"
+addopts = ["-rsfE", "--tb=short"]
 
 [tool.coverage.run]
 source = ["asphalt.{{ project_name }}"]
